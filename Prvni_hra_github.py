@@ -11,30 +11,40 @@ volba_cesty = str(input("Jsi v první místnosti, máš na výběr ze dvou cest,
 if volba_cesty == "pravá":
     #konec cesty
     print("Vybral sis pravou cestu, nyní si došel na konec cesty a před tebou jsou dvoje dveře, na jedných je napsáno ‘Exit‘ a na druhých ‘Tvá cesta ještě nekončí‘")
-    volba_cesty = str(input("Nyní si vyber do kterých dveří chceš vstoupit (Exit/Tvá cesta ještě nekončí): "))
     while True:
         #Výběr ze dvou dveří
-        volba_cesty = str(input("Nyní si vyber do kterých dveří chceš vstoupit (Exit/Tvá cesta ještě nekončí): "))
+        volba_cesty = str(input("Nyní si vyber do kterých dveří chceš vstoupit (Exit/Entry): "))
         #dveře "Tvá cesta ještě nekončí" (správná možnost)
-        if volba_cesty == "Tvá cesta ještě nekončí":
+        if volba_cesty == "Entry":
             print("Jsem rád, že si přeješ pokračovat, nyní si prošel dveřmi a objevil si se v nové místnosti.")
             #úloha číslo 1 (kraje ČR)
             odpoved = int(input("Mám tu pro tebe jednoduchou otázku, kolik krajů má Česká republika? "))
             #správná odpověď
             if odpoved == 14:
                 print("Správná odpověď! Nyní získáváš klíč od dveří s názvem ‘Exit‘ a vstupuješ do další místnosti.")
-                break
+                #otázka zda chceš pokračovat
+                volba_cesty = str(input("Přeješ si pokračovat na tvé cestě za svobodou? (ano/ne): "))
+                if volba_cesty == "ano":
+                    #otázka číslo 2 (Einstein)
+                    print = str(("Mám tu pro tebe již poněkud těžší otázku... Kde se narodil Albert Einstein? Máš na výběr, zvol jedno z písmen: "))
+                    misto_narozeni = ["a) Rakousko", "b) Německo", "c) Švýcarsko"]
+                    for element in misto_narozeni:
+                        print(element)
+                        odpoved = input()
+                        #správná odpověď
+                        if odpoved == "b":
+                            print("Správně! před sebou máš dvoje dveře, do kterých si přeješ vstoupit? (levé/pravé)")
+                        #špatná odpověď    
+                        else:
+                            print("Špatná odpověď! Nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku")
+                            break
 
-
+                else:
+                    print("Uvidíme se příště")  
             #špatná odpověď
             else:
                 print("Špatná odpověd, je vidět, že jsi nedával v zeměpise pozor, nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku")
-                break
-    
-
-        
-            
-            
+                break   
         #exit (špatná možnost)
         else:
             print("Dveře jsou uzamčeny. Máš jen jednu možnost")
