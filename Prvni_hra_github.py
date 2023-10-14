@@ -27,17 +27,16 @@ if volba_cesty == "pravá":
                 if volba_cesty == "ano":
                     #otázka číslo 2 (Einstein)
                     print = str(("Mám tu pro tebe již poněkud těžší otázku... Kde se narodil Albert Einstein? Máš na výběr, zvol jedno z písmen: "))
-                    misto_narozeni = ["a) Rakousko", "b) Německo", "c) Švýcarsko"]
-                    for element in misto_narozeni:
-                        print(element)
-                        odpoved = input()
-                        #správná odpověď
-                        if odpoved == "b":
-                            print("Správně! před sebou máš dvoje dveře, do kterých si přeješ vstoupit? (levé/pravé)")
+                    misto_narozeni = list(str(["a) Rakousko", "b) Německo", "c) Švýcarsko"]))
+                    print(f"{misto_narozeni}")
+                    odpoved = input()
+                    #správná odpověď
+                    if odpoved == "b":
+                        print("Správně! před sebou máš dvoje dveře, do kterých si přeješ vstoupit? (levé/pravé)")
                         #špatná odpověď    
-                        else:
-                            print("Špatná odpověď! Nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku")
-                            break
+                    else:
+                        print("Špatná odpověď! Nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku")
+                        break
 
                 else:
                     print("Uvidíme se příště")  
