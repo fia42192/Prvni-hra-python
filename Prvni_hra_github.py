@@ -33,23 +33,24 @@ if volba_cesty == "Pravá":
                     if odpoved == "b":
                         volba_cesty = str(input("Správně! před sebou máš dvoje dveře, do kterých si přeješ vstoupit? (Pravé/Levé): "))
                         #pravé dveře
-                        if volba_cesty == "Pravé":
-                            #otázka číslo 3 (Vodní plocha)
-                            odpoved = (str(input("Jak se jmenuje největší vodní plocha na území ČR? ")))
-                            #správná odpověď
-                            if odpoved == "Lipno":
-                                #otázka číslo 4 (Jan Hus)
-                                kod = str(input("Správná odpověď! Teď jsi nastoupil do výtahu, vyjel o patro výš a před sebou máš dveře, které po tobě chtějí osmimciferný kód. \nOtázka zní, kdy byl upálen Mistr Jan Hus? (DD/MM/YYYY) \nJaký je tedy kód? "))
+                        while True:
+                            if volba_cesty == "Pravé":
+                                #otázka číslo 3 (Vodní plocha)
+                                odpoved = (str(input("Jak se jmenuje největší vodní plocha na území ČR? ")))
                                 #správná odpověď
-                                if kod == "06071415":
-                                    #room4
-                                    print("Správná odpověď! Dveře se odemčely, v místnosti je na papíře napsán kód od levých dveří. Vracíš se tedy o patro níže a vstupuješ do levých dveří.")
-                                    break
+                                if odpoved == "Lipno":
+                                    #otázka číslo 4 (Jan Hus)
+                                    kod = str(input("Správná odpověď! Teď jsi nastoupil do výtahu, vyjel o patro výš a před sebou máš dveře, které po tobě chtějí osmimciferný kód. \nOtázka zní, kdy byl upálen Mistr Jan Hus? (DD/MM/YYYY) \nJaký je tedy kód? "))
+                                    #správná odpověď
+                                    if kod == "06071415":
+                                        #room4
+                                        print("Správná odpověď! Dveře se odemčely, v místnosti je na papíře napsán kód od levých dveří. Vracíš se tedy o patro níže a vstupuješ do levých dveří.")
+                                continue
 
                             #levé dveře (špatná možtnost)         
-                        else:
-                            print("Od dveří nemáš prozatím kód, musíš tedy pokračovat do pravých dveří.")
-                            
+                            else:
+                                print("Od dveří nemáš prozatím kód, musíš tedy pokračovat do pravých dveří.")
+                            break
                                 
                             
 
