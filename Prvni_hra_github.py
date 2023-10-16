@@ -58,9 +58,11 @@ if volba_cesty == "Pravá":
                     #špatná odpověď
                     else:
                         print("Špatná odpověď! Nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku.")
+                        break
 
                 else:
-                    print("Uvidíme se příště")  
+                    print("Uvidíme se příště") 
+                    break 
             #špatná odpověď
             else:
                 print("Špatná odpověd, je vidět, že jsi nedával v zeměpise pozor, nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku.")
