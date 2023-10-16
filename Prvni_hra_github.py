@@ -2,6 +2,8 @@
 #git commit -m"něco" - připravit na odeslání
 #git push origin master - pushnout na github
 #jednoduché uvozovky- ‚‘
+import sys
+
 
 print("\nVítej v mojí únikové hře!")
 #room1
@@ -47,7 +49,7 @@ if volba_cesty == "Pravá":
                                         #room4
                                         print("\nSprávná odpověď! Dveře se odemčely, v místnosti je na papíře napsán kód od levých dveří. Vracíš se tedy o patro níže a vstupuješ do levých dveří.")
                                         odpoved = str(input(""))
-                                        break
+                                        sys.exit()
                                     
                                     
                                     
@@ -55,12 +57,12 @@ if volba_cesty == "Pravá":
                                     #špatná odpověď
                                     else:
                                         print("Špatná odpověď, hra pro tebe končí.")
-                                        break
+                                        sys.exit()
                                 
                                 #špatná odpověď
                                 else:
                                     print("Špatná odpověď, hra pro tebe končí.")
-                                    break
+                                    sys.exit()
 
                             #levé dveře (špatná možtnost)         
                             else:
@@ -86,7 +88,7 @@ if volba_cesty == "Pravá":
         else:
             print("\nDveře jsou uzamčeny. Máš jen jednu možnost.")
             
-              
+            
 
 
 #levá cesta
