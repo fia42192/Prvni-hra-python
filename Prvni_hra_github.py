@@ -5,7 +5,7 @@
 import sys
 
 
-print("\nVítej v mojí únikové hře! Cílem hry je dostat se do trezoru plného peněz a uniknout z budovy.\nV této hře jsou dva trezory, je jen na tobě, ke kterému se vydáš.\nPozorně si zapisuj všechny číselné kódy, budeš je potřebovat pro otevření trezoru.")
+print("\nVítej v mojí únikové hře! Hra je převážně zaměřena na všeobecné a dějepisné události. Cílem hry je dostat se do trezoru plného peněz a uniknout z budovy.\nV této hře jsou dva trezory, je jen na tobě, ke kterému se vydáš.\nPozorně si zapisuj všechny číselné kódy, budeš je potřebovat pro otevření trezoru.")
 #room1
 volba_cesty = str(input("Nacházíš se v první místnosti, máš na výběr ze dvou cest, z pravé a levé, každá vede k jednomu trezoru, napiš, kterou si přeješ zvolit. (Pravá/Levá): "))
 
@@ -60,23 +60,63 @@ if volba_cesty == "Pravá":
                                                 Heslo = int(input("Na obrazovce je napsána otázka: Kdy byla objevena Amerika? (YYYY)\nHeslo: "))
                                                 if Heslo == 1492:
                                                     print("\nDostal jsi se do počítače, kde je kus plánku, na kterém je zobrazena část cesty k trezoru, tam je však nakresleno, že se musíš vrátit zpět a pokračovat rovně,\ntam tě čekají další dveře s heslem. Dále tě tam bude čekat další křižovatka, u které když se vydáš doleva, tak dojdeš do místnosti,\nkterá také nikam nevede a už se nebudeš moct vrátit zpět.\nVracíš se tedy zpět a pokračuješ rovně.")
-                                                    sys.exit()
+                                                    #otázka číslo 6 (Západořímská říše)
+                                                    kód = int(input("Pokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí trojciferný kód.\nOtázka zní: Kdy se rozpadla Západořímská říše? (YYY): "))
+                                                    #správná odpověď
+                                                    if kód == 476:
+                                                        print("Správně!")
+                                                        #rozcestí
+                                                        volba_cesty = str(input("Nyní před sebou máš další rozcestí, jedna cesta vede doleva a druhá rovně, na dveřích nalevo je napsáno ‘Trap‘, kam si tedy přeješ pokračovat? (Doleva/Rovně): "))
+                                                        #správná možnost
+                                                        if volba_cesty == "Rovně":
+                                                            print("Správná možnost!")
+                                                            #otázka číslo 7 (sovětská vojska)
+                                                            kód = int(input("Nyní se se dostal k dalších dveřím, otázka zní: Ve kterém roce Československý parlament legalizoval pobyt sovětských vojsk v zemi? (YYYY): "))
+                                                            #správná odpověď
+                                                            if kód == 1968:
+                                                                print("Správná odpověď, nyní pokračuješ chodbou a na konci vcházíš do výtahu a jedeš o 3 patra dolů.")
+                                                                sys.exit()
+                                                            #špatná odpověď    
+                                                            else:
+                                                                print("Špatná odpověď.")
+                                                                sys.exit()
+
+                                                        #špatná cesta (past)
+                                                        else:
+                                                            print("Měl jsi poslouchat značení, odtud se už nedostaneš.")
+                                                            sys.exit()
                                             
                                             
                                             
                                             
                                             #Cesta rovně
                                             elif volba_cesty == "Rovně":
-                                                print("\nPokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí tříciferný kód.")
+                                                print("\nPokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí trojciferný kód.")
                                                 #otázka číslo 6 (Západořímská říše)
                                                 kód = int(input("Kdy se rozpadla Západořímská říše? (YYY): "))
+                                                #správná odpověď
                                                 if kód == 476:
                                                     print("Správně!")
+                                                    #rozcestí
                                                     volba_cesty = str(input("Nyní před sebou máš další rozcestí, jedna cesta vede doleva a druhá rovně, na dveřích nalevo je napsáno ‘Trap‘, kam si tedy přeješ pokračovat? (Doleva/Rovně): "))
                                                     #správná cesta
                                                     if volba_cesty == "Rovně":
                                                         print("Správná možnost!")
-                                                        sys.exit()
+                                                        #otázka číslo 7 (sovětská vojska)
+                                                        kód = int(input("Nyní se se dostal k dalších dveřím, otázka zní: Ve kterém roce Československý parlament legalizoval pobyt sovětských vojsk v zemi? (YYYY): "))
+                                                        #správná odpověď
+                                                        if kód == 1968:
+                                                            print("Správná odpověď, nyní pokračuješ chodbou a na konci vcházíš do výtahu a jedeš o 3 patra dolů.")
+                                                            sys.exit()
+                                                        #špatná odpověď
+                                                        else:
+                                                            print("Špatná odpověď.")
+                                                            sys.exit()
+
+
+
+
+                                                        
                                                     #špatná cesta (past)
                                                     else:
                                                         print("Měl jsi poslouchat značení, odtud se už nedostaneš.")
@@ -85,12 +125,12 @@ if volba_cesty == "Pravá":
                                                 
                                                 #špatná odpověď
                                                 else:
-                                                    print("Špatná odpověď")
+                                                    print("Špatná odpověď.")
                                                     sys.exit()
 
                                             #špatná možnost
                                             else:
-                                                print("Špatná možnost")
+                                                print("Špatná možnost.")
                                                 sys.exit()
                                         
                                         
