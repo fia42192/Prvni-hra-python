@@ -3,11 +3,18 @@
 #git push origin master - pushnout na github
 #jednoduché uvozovky- ‚‘
 import sys
+import random
+import time
 
 
-print("\nVítej v mojí únikové hře! Hra je převážně zaměřena na všeobecné a dějepisné události. Cílem hry je dostat se do trezoru plného peněz a uniknout z budovy.\nV této hře jsou dva trezory, je jen na tobě, ke kterému se vydáš.\nPozorně si zapisuj všechny číselné kódy, budeš je potřebovat pro otevření trezoru.")
+print("\nVítej v mojí únikové hře! Hra je převážně zaměřena na všeobecné a dějepisné události formou kvízu. Cílem hry je dostat se do trezoru plného peněz a uniknout z budovy.")
+time.sleep(5)
+print("V této hře jsou dva trezory, je jen na tobě, ke kterému se vydáš.")
+time.sleep(2)
+print("Pozorně si zapisuj všechny číselné kódy, budeš je potřebovat pro otevření trezoru.")
+time.sleep(3)
 #room1
-volba_cesty = str(input("Nacházíš se v první místnosti, máš na výběr ze dvou cest, z pravé a levé, každá vede k jednomu trezoru, napiš, kterou si přeješ zvolit. (Pravá/Levá): "))
+volba_cesty = str(input("Vnikl jsi do již opuštěné budovy, kde jsou ovšem zapomenuté peníze, všechny bezpečnostní opatření jsou stále v provozu, tak do toho!\nNacházíš se v první místnosti, máš na výběr ze dvou cest, z pravé a levé, každá vede k jednomu trezoru, napiš, kterou si přeješ zvolit. (Pravá/Levá): "))
 
 #pravá cesta
 if volba_cesty == "Pravá":
@@ -19,63 +26,101 @@ if volba_cesty == "Pravá":
         #dveře "Entry" (správná možnost)
         if volba_cesty == "Entry":
             #room2
+            time.sleep(1)
             print("\nJsem rád, že si přeješ pokračovat, nyní si prošel dveřmi a objevil si se v nové místnosti.")
             #úloha číslo 1 (kraje ČR)
             odpoved = int(input("Mám tu pro tebe jednoduchou otázku, kolik krajů má Česká republika? "))
             #správná odpověď
             if odpoved == 14:
                 #room3
+                time.sleep(1)
                 print("\nSprávná odpověď! Nyní získáváš klíč od dveří s názvem ‘Top secret‘, vracíš se tedy k nim a vstupuješ do další místnosti.")
                 #otázka zda chceš pokračovat
                 volba_cesty = str(input("Přeješ si pokračovat na tvé cestě za bohatstím? Už nebude cesty zpět (Ano/Ne): "))
                 if volba_cesty == "Ano":
                     #otázka číslo 2 (Einstein)
+                    time.sleep(1)
                     odpoved = str(input("\nMám tu pro tebe již poněkud těžší otázku... Kde se narodil Albert Einstein? Máš na výběr, zvol jedno z písmen: \n a) Rakousko \n b) Německo \n c) Švýcarsko \n Správná odpověď: "))
                     #správná odpověď
                     if odpoved == "b":
+                        time.sleep(1)
                         print("\nSprávně!")
                         while True:
                             volba_cesty = str(input("Před sebou máš dvoje dveře, do kterých si přeješ vstoupit? (Pravé/Levé): "))
                             #pravé dveře
                             if volba_cesty == "Pravé":
                                 #otázka číslo 3 (Vodní plocha)
+                                time.sleep(1)
                                 odpoved = (str(input("\nJak se jmenuje největší vodní plocha na území ČR? ")))
                                 #správná odpověď
                                 if odpoved == "Lipno":
                                     #otázka číslo 4 (Jan Hus)
+                                    time.sleep(1)
                                     kod = str(input("\nSprávná odpověď! Teď jsi nastoupil do výtahu, vyjel o patro výš a před sebou máš dveře, které po tobě chtějí osmimciferný kód. \nOtázka zní, kdy byl upálen Mistr Jan Hus? (DDMMYYYY) \nJaký je tedy kód? "))
                                     #správná odpověď
                                     if kod == "06071415":
                                         #room4
+                                        time.sleep(1)
                                         print("\nSprávná odpověď! Dveře se odemčely, v místnosti je na papíře napsán kód od levých dveří.\nKód:12345\nVracíš se tedy o patro níže a musíš zadat kód od dveří, které jsou hned vedle tebe.")
                                         kód = int(input("kód: "))
                                         #kód od levých dveří
                                         if kód == 12345:
+                                            time.sleep(1)
                                             print("\nDveře se otevřely a vstupuješ do dlouhé chodby, na konci vidíš křižovatku se dvěmi možnými cestami.")
                                             volba_cesty = (str(input("Kam si přeješ pokračovat? (Doleva/Rovně): ")))
                                             #Cesta doleva
                                             if volba_cesty == "Doleva":
                                                 #otázka číslo 5 (Amerika)
+                                                time.sleep(1)
                                                 print("\nVydal si se doleva a dále pokračuješ chodbou, na konci vejdeš do místnost, kde na stole leží notebook, ten však vyžaduje čtyřmístné heslo.")
                                                 Heslo = int(input("Na obrazovce je napsána otázka: Kdy byla objevena Amerika? (YYYY)\nHeslo: "))
                                                 if Heslo == 1492:
-                                                    print("\nDostal jsi se do počítače, kde je kus plánku, na kterém je zobrazena část cesty k trezoru, tam je však nakresleno, že se musíš vrátit zpět a pokračovat rovně,\ntam tě čekají další dveře s heslem. Dále tě tam bude čekat další křižovatka, u které když se vydáš doleva, tak dojdeš do místnosti,\nkterá také nikam nevede a už se nebudeš moct vrátit zpět.\nVracíš se tedy zpět a pokračuješ rovně.")
+                                                    time.sleep(1)
+                                                    print("Dostal jsi se do počítače, kde je kus plánku, na kterém je zobrazena část cesty k trezoru, tam je však nakresleno, že se musíš vrátit zpět a pokračovat rovně.")
+                                                    time.sleep(5)
+                                                    print("Tam tě čekají další dveře s heslem. Dále tě tam bude čekat další křižovatka, u které když se vydáš doleva, tak dojdeš do místnosti,\nkterá také nikam nevede a už se nebudeš moct vrátit zpět.")
+                                                    time.sleep(8)
+                                                    print("Vracíš se tedy zpět a pokračuješ rovně.")
                                                     #otázka číslo 6 (Západořímská říše)
+                                                    time.sleep(1)
                                                     kód = int(input("Pokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí trojciferný kód.\nOtázka zní: Kdy se rozpadla Západořímská říše? (YYY): "))
                                                     #správná odpověď
                                                     if kód == 476:
+                                                        time.sleep(1)
                                                         print("Správně!")
                                                         #rozcestí
+                                                        time.sleep(1)
                                                         volba_cesty = str(input("Nyní před sebou máš další rozcestí, jedna cesta vede doleva a druhá rovně, na dveřích nalevo je napsáno ‘Trap‘, kam si tedy přeješ pokračovat? (Doleva/Rovně): "))
                                                         #správná možnost
                                                         if volba_cesty == "Rovně":
+                                                            time.sleep(1)
                                                             print("Správná možnost!")
                                                             #otázka číslo 7 (sovětská vojska)
+                                                            time.sleep(1)
                                                             kód = int(input("Nyní se se dostal k dalších dveřím, otázka zní: Ve kterém roce Československý parlament legalizoval pobyt sovětských vojsk v zemi? (YYYY): "))
                                                             #správná odpověď
                                                             if kód == 1968:
+                                                                time.sleep(1)
                                                                 print("Správná odpověď, nyní pokračuješ chodbou a na konci vcházíš do výtahu a jedeš o 3 patra dolů.")
+                                                                while True:
+                                                                    zahadne_cislo = random.randint(1, 10)
+                                                                    tve_cislo = int(input("Nyní jsi došel ke dveřím, kde pro tebe nemám žádnou otázku, ale musíš uhádnout jednociferný kód od dveří, který se po každém pokusu změní."))
+                                                                    if tve_cislo == zahadne_cislo:
+                                                                        time.sleep(1.5)
+                                                                        print("Správný kód!")
+                                                                        break
+                                                                    else:
+                                                                        time.sleep(1.5)
+                                                                        print("Špatná odpověď, zkus to znovu...")
+                                                                        continue
+                                                                print("Výborně.")
                                                                 sys.exit()
+                                                                    
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
                                                             #špatná odpověď    
                                                             else:
                                                                 print("Špatná odpověď.")
@@ -91,51 +136,80 @@ if volba_cesty == "Pravá":
                                             
                                             #Cesta rovně
                                             elif volba_cesty == "Rovně":
-                                                print("\nPokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí trojciferný kód.")
+                                                time.sleep(1)
+                                                print("Pokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí trojciferný kód.")
                                                 #otázka číslo 6 (Západořímská říše)
+                                                time.sleep(1)
                                                 kód = int(input("Kdy se rozpadla Západořímská říše? (YYY): "))
                                                 #správná odpověď
                                                 if kód == 476:
+                                                    time.sleep(1)
                                                     print("Správně!")
                                                     #rozcestí
+                                                    time.sleep(1)
                                                     volba_cesty = str(input("Nyní před sebou máš další rozcestí, jedna cesta vede doleva a druhá rovně, na dveřích nalevo je napsáno ‘Trap‘, kam si tedy přeješ pokračovat? (Doleva/Rovně): "))
                                                     #správná cesta
                                                     if volba_cesty == "Rovně":
+                                                        time.sleep(1)
                                                         print("Správná možnost!")
                                                         #otázka číslo 7 (sovětská vojska)
+                                                        time.sleep(1)
                                                         kód = int(input("Nyní se se dostal k dalších dveřím, otázka zní: Ve kterém roce Československý parlament legalizoval pobyt sovětských vojsk v zemi? (YYYY): "))
                                                         #správná odpověď
                                                         if kód == 1968:
+                                                            time.sleep(1)
                                                             print("Správná odpověď, nyní pokračuješ chodbou a na konci vcházíš do výtahu a jedeš o 3 patra dolů.")
+                                                            while True:
+                                                                    zahadne_cislo = random.randint(1, 10)
+                                                                    tve_cislo = int(input("Nyní jsi došel ke dveřím, kde pro tebe nemám žádnou otázku, ale musíš uhádnout jednociferný kód od dveří, který se po každém pokusu změní."))
+                                                                    if tve_cislo == zahadne_cislo:
+                                                                        time.sleep(1.5)
+                                                                        print("Správný kód!")
+                                                                        break
+                                                                    else:
+                                                                        time.sleep(1.5)
+                                                                        print("Špatná odpověď, zkus to znovu...")
+                                                                        continue
+                                                            print("výborně")
                                                             sys.exit()
-                                                        #špatná odpověď
+                                                            
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        #špatná odpoveď
                                                         else:
+                                                            time.sleep(1)
                                                             print("Špatná odpověď.")
                                                             sys.exit()
-
-
-
 
                                                         
                                                     #špatná cesta (past)
                                                     else:
+                                                        time.sleep(1)
                                                         print("Měl jsi poslouchat značení, odtud se už nedostaneš.")
                                                         sys.exit()
                                                 
                                                 
                                                 #špatná odpověď
                                                 else:
+                                                    time.sleep(1)
                                                     print("Špatná odpověď.")
                                                     sys.exit()
 
                                             #špatná možnost
                                             else:
+                                                time.sleep(1)
                                                 print("Špatná možnost.")
                                                 sys.exit()
                                         
                                         
                                         #špatná odpověď
                                         else:
+                                            time.sleep(1)
                                             print("Neumíš ani zadat kód? V tom případě nemá cenu abys pokračoval.")
                                             sys.exit()
                                     
@@ -144,16 +218,19 @@ if volba_cesty == "Pravá":
                                     
                                     #špatná odpověď
                                     else:
+                                        time.sleep(1)
                                         print("Špatná odpověď, hra pro tebe končí.")
                                         sys.exit()
                                 
                                 #špatná odpověď
                                 else:
+                                    time.sleep(1)
                                     print("Špatná odpověď, hra pro tebe končí.")
                                     sys.exit()
 
                             #levé dveře (špatná možtnost)         
                             else:
+                                time.sleep(1)
                                 print("\nOd dveří nemáš prozatím kód, musíš tedy pokračovat do pravých dveří.")
                                 continue
                                 
@@ -162,18 +239,22 @@ if volba_cesty == "Pravá":
 
                     #špatná odpověď
                     else:
+                        time.sleep(1)
                         print("\nŠpatná odpověď! Nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku.")
                         break
 
                 else:
+                    time.sleep(1)
                     print("\nUvidíme se příště") 
                     break 
             #špatná odpověď
             else:
+                time.sleep(1)
                 print("Špatná odpověd, je vidět, že jsi nedával v zeměpise pozor, nyní pro tebe hra končí, program můžeš restartovat a hrát od začátku.")
                 break
         #Top secret (špatná možnost)
         else:
+            time.sleep(1)
             print("\nDveře jsou uzamčeny. Máš jen jednu možnost.")
             
             
@@ -181,8 +262,10 @@ if volba_cesty == "Pravá":
 
 #levá cesta
 elif volba_cesty == "Levá":
+    time.sleep(1)
     print("Vybral sis levou cestu, ")
 
 #špatná volba    
 else:
+    time.sleep(1)
     print("Game over!")
