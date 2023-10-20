@@ -82,7 +82,7 @@ if volba_cesty == "Pravá":
                                                     time.sleep(8)
                                                     print("Vracíš se tedy zpět a pokračuješ rovně.")
                                                     #otázka číslo 6 (Západořímská říše)
-                                                    time.sleep(1)
+                                                    time.sleep(2)
                                                     kód = int(input("Pokračuješ tedy rovně a před tebou jsou další bezpečnostní dveře, které chtějí trojciferný kód.\nOtázka zní: Kdy se rozpadla Západořímská říše? (YYY): "))
                                                     #správná odpověď
                                                     if kód == 476:
@@ -90,11 +90,11 @@ if volba_cesty == "Pravá":
                                                         print("\nSprávně!")
                                                         #rozcestí
                                                         time.sleep(1)
-                                                        volba_cesty = str(input("\nNyní před sebou máš další rozcestí, jedna cesta vede doleva a druhá rovně, na dveřích nalevo je napsáno ‘Trap‘, kam si tedy přeješ pokračovat? (Doleva/Rovně): "))
+                                                        volba_cesty = str(input("Nyní před sebou máš další rozcestí, jedna cesta vede doleva a druhá rovně, na dveřích nalevo je napsáno ‘Trap‘, kam si tedy přeješ pokračovat? (Doleva/Rovně): "))
                                                         #správná možnost
                                                         if volba_cesty == "Rovně":
                                                             time.sleep(1)
-                                                            print("Správná možnost!")
+                                                            print("\nSprávná možnost!")
                                                             #otázka číslo 7 (sovětská vojska)
                                                             time.sleep(1)
                                                             kód = int(input("Teď jsi se dostal k dalších dveřím, otázka zní: Ve kterém roce Československý parlament legalizoval pobyt sovětských vojsk v zemi? (YYYY): "))
@@ -105,7 +105,7 @@ if volba_cesty == "Pravá":
                                                                 while True:
                                                                     #hádání čísla
                                                                     zahadne_cislo = random.randint(1, 5)
-                                                                    tve_cislo = int(input("\nNyní jsi došel ke dveřím, kde pro tebe nemám žádnou otázku, ale musíš uhádnout jednociferný kód od dveří, který se po každém pokusu změní. (číslo nebude potřeba k otevření trezoru), číslo: "))
+                                                                    tve_cislo = int(input("\nNyní jsi došel ke dveřím, kde pro tebe nemám žádnou otázku, ale musíš uhádnout jednociferný kód od dveří (1-5), který se po každém pokusu změní. (číslo nebude potřeba k otevření trezoru), číslo: "))
                                                                     #správné číslo
                                                                     if tve_cislo == zahadne_cislo:
                                                                         time.sleep(1.5)
@@ -136,8 +136,8 @@ if volba_cesty == "Pravá":
                                                                         time.sleep(1)
                                                                         print("\nSprávně! Dorazil jsi k trezoru!")
                                                                         #správné heslo od trezoru
-                                                                        kod_trezoru = int(input("Zadej heslo od trezoru:"))
-                                                                        if kod_trezoru == 1406071415123454761968:
+                                                                        kod_trezoru = int(input("Zadej heslo od trezoru: "))
+                                                                        if kod_trezoru == 14060714151234514924761968:
                                                                             time.sleep(2)
                                                                             print("\nGratuluji! vedle sebe vidíš dveře s názvem ‘Exit‘, zde už jen závěrečná otázka...")
                                                                             time.sleep(3)
@@ -145,8 +145,17 @@ if volba_cesty == "Pravá":
                                                                             posledni_otazka = str(input("\nJe Atlantský oceán největší na Zemi? (Ano/Ne): "))
                                                                             #správná odpověď
                                                                             if posledni_otazka == "Ne":
-                                                                                time.sleep(1)
-                                                                                print("\nÚspěšně jsi dokončil hru! Gratuluji!")
+                                                                                def print_text_slowly(text):
+                                                                                    for char in text:
+                                                                                        if char != ' ':
+                                                                                            print(char, end='', flush=True)
+                                                                                            time.sleep(0.1)
+                                                                                        else:
+                                                                                            print(' ', end='', flush=True)
+
+                                                                                text_to_print = "Úspěšně jsi dokončil hru! Gratuluji!"
+                                                                                print_text_slowly(text_to_print)
+                                                                                print()
                                                                                 sys.exit()
                                                                         
                                                                             #špatná odpověď
@@ -256,9 +265,19 @@ if volba_cesty == "Pravá":
                                                                         posledni_otazka = str(input("\nJe Atlantský oceán největší na Zemi? (Ano/Ne): "))
                                                                         #správná odpověď
                                                                         if posledni_otazka == "Ne":
-                                                                            time.sleep(1)
-                                                                            print("\nÚspěšně jsi dokončil hru! Gratuluji!")
+                                                                            def print_text_slowly(text):
+                                                                                for char in text:
+                                                                                    if char != ' ':
+                                                                                        print(char, end='', flush=True)
+                                                                                        time.sleep(0.1)
+                                                                                    else:
+                                                                                        print(' ', end='', flush=True)
+
+                                                                            text_to_print = "Úspěšně jsi dokončil hru! Gratuluji!"
+                                                                            print_text_slowly(text_to_print)
+                                                                            print()
                                                                             sys.exit()
+
                                                                         
                                                                         #špatná odpověď
                                                                         else:
@@ -374,7 +393,99 @@ if volba_cesty == "Pravá":
 #levá cesta
 elif volba_cesty == "Levá":
     time.sleep(1)
-    print("\nVybral sis levou cestu, ")
+    print("\nVybral sis levou cestu, projdeš temnou chodbu, zabočíš doprava a před sebou vidíš dveře.")
+    time.sleep(3)
+    print("jsou však zamčené, pro jejich odemknutí je potřeba odpovědět na následující otázku:")
+    time.sleep(3)
+    #otázka číslo 1 (OSN)
+    print("Kde se nachází hlavní sídlo OSN?:")
+    time.sleep(2)
+    print("a) v Bruselu")
+    time.sleep(0.5)
+    print("b) ve Washingtonu")
+    time.sleep(0.5)
+    print("c) v New Yorku")
+    time.sleep(0.5)
+    print("d) v Haagu")
+    odpoved = str(input("Napiš prosím písmeno: "))
+    #správná odpověď
+    if odpoved == "c":
+        print("\nSprávná odpověď.")
+        time.sleep(1)
+        print("Nyní jsi prošel dveřmi, na zemi jsi našel papírek s nápisem ‘Door No.5 - password: 24680‘ a pokračuješ dále.")
+        time.sleep(5)
+        print("\nDošel jsi na rozcestí.")
+        time.sleep(1)
+        print("Jsi na rozcestí, jsou zde dvoje dveře, jedny s nápisem ‘Warehouse‘ a druhé s nápisem ‘Door No.3‘.")
+        while True:
+            volba_cesty = input("Vyber si jednu z možností. (Warehouse/Door3): ")
+            #správná volba 
+            if volba_cesty == "Door3":
+                time.sleep(1)
+                #room2
+                print("\nVešel jsi do dveří a vcházíš do velké místnosti.")
+                print("Zde jsou jen jediné dveře, k jejich odemčení odpověz na následujicí otázku:")
+                #otázka číslo 2 (Černobyl)
+                odpoved = int(input("Ve kterém roce se stala havárie jaderné elektrárny v Černobylu?: "))
+                #správná odpověď
+                if odpoved == 1986:
+                    time.sleep(1)
+                    print("\nsprávně")
+                    time.sleep(1)
+                    print("Procházíš dveřma a před tebou je na televizi napsáno:")
+                    time.sleep(3)
+                    print("Seřaď následující čísla vzestupně a vytvoř kód: 4, 1, 9, 7 (např.:7914)")
+                    time.sleep(3)
+                    serazene_cislo = int(input("Pořadí: "))
+                    #správný kód
+                    if serazene_cislo == 1479:
+                        time.sleep(1)
+                        print("Správný kód.")
+                        time.sleep(1)
+                        print("Nyní jsou před tebou dveře číslo 5.")
+                        time.sleep(1)
+                        #kód, který byl na papírku
+                        kod = int(input("Zadej kód:"))
+                        #správný kód
+                        if kod == 24680:
+                            time.sleep(1)
+                            print("Dveře se otevřely a pokračuješ dále.")
+                            sys.exit()
+
+                        else:
+                            time.sleep(1)
+                            print("Špatný kód, byl přeci na papírku.")
+                            sys.exit()
+                        
+
+                    
+                    
+                    #nesprávný kód
+                    else:
+                        time.sleep(1)
+                        print("Nesprávný kód.")
+                        sys.exit()
+                
+                
+                #špatná odpověď
+                else:
+                    time.sleep(1)
+                    print("Špatná odpověď")
+                    sys.exit()
+            
+            #špatná volba - warehouse
+            else:
+                time.sleep(1)
+                #room2
+                print("\nProšel jsi dveřmi, ale sklad je prázdný, vracíš se tedy zpět.")
+
+
+        
+    #špatná odpověď
+    else:
+        time.sleep(1)
+        print("Špatná odpověď")
+        sys.exit()
 
 #špatná volba    
 else:
