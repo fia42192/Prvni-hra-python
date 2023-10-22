@@ -726,6 +726,8 @@ else:
     print("\nGame over!")
 
 
+
+
 #readme soubor
 #Úniková hra formou kvízu (historie, všeobecné otázky), ve které je cílem dostat se k trezoru s penězi a následně uniknout pryč.
 #Ve hře jsou dva trezory, je jen na tobě, k jakému se vydáš. K oběma trezorům vede jiná cesta.
