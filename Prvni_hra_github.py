@@ -435,7 +435,7 @@ elif volba_cesty == "Levá":
                     print("Procházíš dveřma a před tebou je na televizi napsáno:")
                     time.sleep(3)
                     print("Seřaď následující čísla vzestupně a vytvoř kód: 4, 1, 9, 7 (např.:7914)")
-                    time.sleep(3)
+                    time.sleep(2)
                     serazene_cislo = int(input("Pořadí: "))
                     #správný kód
                     if serazene_cislo == 1479:
@@ -462,30 +462,80 @@ elif volba_cesty == "Levá":
                                 time.sleep(1)
                                 print("Správná odpověď.")
                                 time.sleep(1)
+                                #výtah
                                 print("Vcházíš tedy do výtahu a jedeš o dvě patra nahoru.")
                                 time.sleep(2)
                                 while True:
+                                    #rozcestí
                                     print("Zde je rozcestí, máš zde na výběr z levé a pravé cesty, do které se chceš vydat?")
+                                    time.sleep(3)
                                     odpoved = str(input("Vyber si cestu. (Levá/Pravá): "))
+                                    #pravá cesta
                                     if odpoved == "Pravá":
-                                        print("Pokračuješ tedy doprava, jdeš po schodech dolů.")
-                                        sys.exit()
+                                        time.sleep(1)
+                                        print("Pokračuješ tedy doprava, jdeš po schodech dolů a jsou před tebou dveře.")
+                                        #otázka číslo 5 (Sametová revoluce)
+                                        kod = int(input("V jakém roce proběhla Sametová revoluce? "))
+                                        #správná odpověď
+                                        if kod == 1989:
+                                            time.sleep(1)
+                                            print("Správně, dveře se otevřely a ty pokračuješ chodbou dále.")
+                                            time.sleep(2)
+                                            print("Na konci chodby jsou nade dveřmi kamery s pohybovými senzory, které musíš vypnout.")
+                                            time.sleep(3)
+                                            print("Ty však vypneš tlačítkem ve skříni, která je kousek od tebe směrem doprava.")
+                                            time.sleep(3)
+                                            print("Do skříně se dostaneš odpovědí na otázku: ")
+                                            time.sleep(2)
+                                            #otázka číslo 6 (Hlavní Město)
+                                            hlavni_mesto = str(input("Jaké je hlavní město Portugalska? "))
+                                            #správná odpověď
+                                            if hlavni_mesto == "Lisabon":
+                                                print("Správná odpověď! Nyní vypínáš senzory a pokračuješ dveřmi do další místnosti")
+                                                sys.exit()
+
+                                            
+                                            #špatná odpověď
+                                            else:
+                                                time.sleep(1)
+                                                print("Špatná odpověď, spustil jsi alarm a zde pro tebe hra končí...")
+                                                sys.exit()
+
+
+                                        #špatná odpověď
+                                        else:
+                                            time.sleep(1)
+                                            print("Špatná odpověď.")
+                                            sys.exit()
+    
+                                    #levá cesta
                                     else:
+                                        time.sleep(1)
                                         print("Vydal jsi se doleva a před sebou vidíš dveře s nápisem ‘Bonus‘.")
                                         time.sleep(3)
+                                        #bonus
                                         bonus = str(input("Přeješ si zodpovědět otázku a dostat bonusové peníze? (Ano/Ne): "))
+                                        #chci bonus
                                         if bonus == "Ano":
+                                            time.sleep(1)
+                                            #otázka číslo 4 (Planeta)
                                             planeta = str(input("Která planeta je nejvzdálenější od Slunce?: "))
+                                            #správná odpověď
                                             if planeta == "Neptun":
+                                                time.sleep(1)
                                                 print("Správná odpověď, získáváš bonus a vracíš se zpět na rozcestí.")
                                                 continue
                                             
-                                            
+                                            #špatná odpověď
                                             else:
+                                                time.sleep(1)
                                                 print("Špatná odpověď, riskovat se ti nevyplatilo.")
                                                 sys.exit()
-
+                                        
+                                        
+                                        #nechci bonus
                                         else:
+                                            time.sleep(1)
                                             print("Vracíš se tedy zpět.")
                                             continue
 
