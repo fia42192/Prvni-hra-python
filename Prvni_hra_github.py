@@ -430,7 +430,7 @@ elif volba_cesty == "Levá":
                 #správná odpověď
                 if odpoved == 1986:
                     time.sleep(1)
-                    print("\nsprávně")
+                    print("\nSprávně.")
                     time.sleep(1)
                     print("Procházíš dveřma a před tebou je na televizi napsáno:")
                     time.sleep(3)
@@ -445,13 +445,61 @@ elif volba_cesty == "Levá":
                         print("Nyní jsou před tebou dveře číslo 5.")
                         time.sleep(1)
                         #kód, který byl na papírku
-                        kod = int(input("Zadej kód:"))
+                        kod = int(input("Zadej kód: "))
                         #správný kód
                         if kod == 24680:
                             time.sleep(1)
                             print("Dveře se otevřely a pokračuješ dále.")
-                            sys.exit()
+                            time.sleep(2)
+                            print("Procházíš dlouhou chodbou a na konci je výtah.")
+                            time.sleep(2)
+                            print("Je však zamčený a pro jeho odemčení je potřeba odpovědět na následujicí otázku: ")
+                            time.sleep(4)
+                            #otázka číslo 3 (Vltava)
+                            odpoved = str(input("Jaká je nejdelší řeka ČR?: "))
+                            #správná odpověď
+                            if odpoved == "Vltava":
+                                time.sleep(1)
+                                print("Správná odpověď.")
+                                time.sleep(1)
+                                print("Vcházíš tedy do výtahu a jedeš o dvě patra nahoru.")
+                                time.sleep(2)
+                                while True:
+                                    print("Zde je rozcestí, máš zde na výběr z levé a pravé cesty, do které se chceš vydat?")
+                                    odpoved = str(input("Vyber si cestu. (Levá/Pravá): "))
+                                    if odpoved == "Pravá":
+                                        print("Pokračuješ tedy doprava, jdeš po schodech dolů.")
+                                        sys.exit()
+                                    else:
+                                        print("Vydal jsi se doleva a před sebou vidíš dveře s nápisem ‘Bonus‘.")
+                                        time.sleep(3)
+                                        bonus = str(input("Přeješ si zodpovědět otázku a dostat bonusové peníze? (Ano/Ne): "))
+                                        if bonus == "Ano":
+                                            planeta = str(input("Která planeta je nejvzdálenější od Slunce?: "))
+                                            if planeta == "Neptun":
+                                                print("Správná odpověď, získáváš bonus a vracíš se zpět na rozcestí.")
+                                                continue
+                                            
+                                            
+                                            else:
+                                                print("Špatná odpověď, riskovat se ti nevyplatilo.")
+                                                sys.exit()
 
+                                        else:
+                                            print("Vracíš se tedy zpět.")
+                                            continue
+
+                            
+                            
+                            
+                             #špatná odpověď
+                            else:
+                                time.sleep(1)
+                                print("Špatná odpověď.")
+                                sys.exit()
+                        
+                        
+                        #nesprávný kód
                         else:
                             time.sleep(1)
                             print("Špatný kód, byl přeci na papírku.")
