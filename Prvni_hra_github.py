@@ -491,8 +491,69 @@ elif volba_cesty == "Levá":
                                             hlavni_mesto = str(input("Jaké je hlavní město Portugalska? "))
                                             #správná odpověď
                                             if hlavni_mesto == "Lisabon":
-                                                print("Správná odpověď! Nyní vypínáš senzory a pokračuješ dveřmi do další místnosti")
-                                                sys.exit()
+                                                time.sleep(1)
+                                                print("Správná odpověď! Nyní vypínáš senzory a pokračuješ dveřmi do další místnosti.")
+                                                time.sleep(2)
+                                                print("Zde pro tebe mám 3 otázky, z každé odpovědi ti vznikne část kódu, který jen spojíš za sebe a vznikne ti tak další kód.")
+                                                time.sleep(3)
+                                                print("Který pak jen napíšeš za sebe a vznikne ti tak kód od dalších bezpečnostních dveří.")
+                                                time.sleep(2)
+                                                #kontrolní otázka
+                                                odpoved = str(input("Jsi připraven na otázky? (Ano/Ne): "))
+                                                #Jsi připraven
+                                                if odpoved == "Ano":
+                                                    time.sleep(1)
+                                                    print("Dobře tedy, začneme.")
+                                                    time.sleep(1)
+                                                    #otázla číslo 7 (Bílá hora)
+                                                    bila_hora = int(input("Ve kterém roce se odehrála bitva na Bíle hoře? "))
+                                                    #správná odpověď
+                                                    if bila_hora == 1620:
+                                                        time.sleep(1)
+                                                        print("Správně! Pokračujeme na druhou otázku.")
+                                                        #otázka číslo 8 (Titanik)
+                                                        titanik = int(input("Ve kterém roce se potopil zaoceánský parník Titanik? "))
+                                                        #správná odpověď
+                                                        if titanik == 1912:
+                                                            time.sleep(1)
+                                                            print("Správná odpověď, jdeme na třetí otázku.")
+                                                            #otázka číslo 9 (Panamský průplav)
+                                                            pruplav = int(input("Byl Panamský průplav otevřen ve stejném roce, jako začala První světová válka? (1/0): "))
+                                                            #správná odpověď
+                                                            if pruplav == 1:
+                                                                time.sleep(1)
+                                                                print("Správně")
+                                                                sys.exit()
+
+                                                            
+
+                                                            #špatná odpověď
+                                                            else:
+                                                                time.sleep(1)
+                                                                print("Škoda, už jsi byl skoro na konci.")
+                                                                sys.exit()
+
+                                                        
+                                                        #špatná odpověď
+                                                        else:
+                                                            time.sleep(1)
+                                                            print("Špatná odpověď.")
+                                                            sys.exit()
+
+
+                                                    #špatná odpověď
+                                                    else:
+                                                        time.sleep(1)
+                                                        print("Špatná odpověď.")
+                                                        sys.exit()
+
+                                                
+                                                #Nejsi připraven
+                                                else:
+                                                    time.sleep(1)
+                                                    print("Říkal jsem si, že ještě nejsi připraven, tak třeba příště...")
+                                                    sys.exit()
+                                                
 
                                             
                                             #špatná odpověď
